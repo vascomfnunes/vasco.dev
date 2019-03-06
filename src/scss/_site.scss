@@ -31,10 +31,7 @@ p {
 
 .content {
   margin-top: 65px;
-	padding: 35px;
-}
-
-#home {
+  padding: 35px;
 }
 
 #photo {
@@ -45,15 +42,15 @@ p {
 }
 
 .navbar {
--webkit-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+  -webkit-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+  box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
 }
 
 .navbar-brand {
-	font-size: 3em;
-	text-transform: lowercase;
-	margin-top: -15px;
+  font-size: 3em;
+  text-transform: lowercase;
+  margin-top: -15px;
 }
 
 button.navbar-toggler {
@@ -67,11 +64,7 @@ button.navbar-toggler {
 }
 
 #vasco {
-	color: white;
-}
-
-#nunes {
-	color: #888;
+  color: white;
 }
 
 #title {
@@ -122,7 +115,7 @@ button.navbar-toggler {
 }
 
 .fas {
- color: $accent_colour; 
+  color: $accent_colour; 
 }
 
 .logos {
