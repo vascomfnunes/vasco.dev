@@ -54,7 +54,7 @@ const AUTOPREFIXER_BROWSERS = [
 
 function style () {
   return gulp
-    .src(['node_modules/animate.css/animate.min.css', 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss', 'node_modules/@fortawesome/fontawesome-free/scss/regular.scss', 'node_modules/@fortawesome/fontawesome-free/scss/solid.scss', 'node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss', 'node_modules/@fortawesome/fontawesome-free/scss/brands.scss', 'node_modules/bootstrap/scss/bootstrap.scss', paths.styles.src])
+    .src(['node_modules/animate.css/animate.min.css', 'node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss', 'node_modules/@fortawesome/fontawesome-free/scss/regular.scss', 'node_modules/@fortawesome/fontawesome-free/scss/solid.scss', 'node_modules/@fortawesome/fontawesome-free/scss/v4-shims.scss', 'node_modules/@fortawesome/fontawesome-free/scss/brands.scss', 'node_modules/aos/src/sass/aos.scss', 'node_modules/bootstrap/scss/bootstrap.scss', paths.styles.src])
   // Initialize sourcemaps before compilation starts
     .pipe(sourcemaps.init())
     .pipe(sass())

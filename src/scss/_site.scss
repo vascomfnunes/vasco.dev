@@ -25,6 +25,10 @@ p {
   font-size: 1.1em;
 }
 
+.hand {
+  cursor: pointer;
+}
+
 .navbar {
   margin-bottom: 50px;
 }
@@ -45,6 +49,10 @@ p {
   -webkit-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
   -moz-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
   box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+
+  .fas {
+  font-size: 2em;
+  }
 }
 
 .navbar-brand {
@@ -56,7 +64,7 @@ p {
 button.navbar-toggler {
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 15px;
 }
 
 .bg-dark {
@@ -77,11 +85,24 @@ button.navbar-toggler {
 
 #what {
   padding-bottom: 30px;
+
+  p {
+    color: $accent_colour2;
+  }
 }
 
 #work {
   background-color: $accent_colour;
+
+  a {
+    color: $foreground_color;
+  }
+
+  a:hover {
+    color: $accent_colour;
+  }
 }
+
 
 #contact {
   margin-top:30px;
@@ -90,6 +111,18 @@ button.navbar-toggler {
   p {
     font-size: 2em;
     font-weight: bold;
+  }
+
+  a {
+    color: $accent_colour2;
+  }
+
+  a:hover {
+    color: $foreground_color;
+  }
+
+  .fas {
+    color: $foreground_color!important;
   }
 }
 
@@ -105,7 +138,7 @@ button.navbar-toggler {
   }
 
   p {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 
 }
@@ -119,14 +152,95 @@ button.navbar-toggler {
 }
 
 .logos {
-  margin-bottom: 15px;
   max-width: 150px;
-  display: inline;
-  vertical-align: middle;
+  top: 10px;
 }
 
 .logo-container {
   height: 12em;
   line-height: 12em;
   text-align: center;
+}
+
+
+.grid-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  margin: 15px 0;
+
+  .grid-image {
+  }
+
+  .grid-image img {
+    width: 100%;
+  }
+
+  .text-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+
+    p {
+      font-size: 15px;
+      text-align: center;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 15px;
+    }
+  }
+
+  .box-img {
+    width: 100%;
+    float: left;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+
+}
+
+.grid-item:hover {
+  -webkit-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+  box-shadow: 0px 3px 26px 0px rgba(0,0,0,0.57);
+}
+
+.grid-item-hover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.grid-item:hover .grid-item-hover {
+  left: 0;
+}
+
+.grid-item:hover .text-wrap {
+  background: none;
+}
+
+.grid-item:hover .grid-image .text-wrap {
+  bottom: -100%;
 }

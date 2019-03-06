@@ -38,5 +38,7 @@
     "gulp-uglify-es": "^1.0.4",
     "jquery": "^3.3.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
 }
