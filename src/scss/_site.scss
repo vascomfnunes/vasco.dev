@@ -109,8 +109,8 @@ button.navbar-toggler {
   margin-bottom: 30px;
 
   p {
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 30px;
   }
 
   a {
@@ -258,4 +258,14 @@ button.navbar-toggler {
 #form-error {
   font-size: 1.2em!important;
   margin-top: 15px;
+}
+
+.form-control {
+  background-color: $background-color;
+  color: $foreground-color;
+  border: none;
+}
+
+#form-hint {
+  color: $accent_colour2;
 }
