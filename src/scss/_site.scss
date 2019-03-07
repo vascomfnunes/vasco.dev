@@ -37,7 +37,7 @@ p {
 }
 
 .content {
-  margin-top: 65px;
+  margin-top: 160px;
   padding: 35px;
 }
 
@@ -49,13 +49,27 @@ p {
 }
 
 .navbar {
-  -webkit-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-
   .fas {
     font-size: 2em;
   }
+}
+
+.shadow-bottom {
+  -webkit-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
+  box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
+}
+
+.dark-background {
+  background-color: $gray!important;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.nav-item {
+  text-transform: lowercase;
+  font-size: 1.3em;
 }
 
 .navbar-brand {
@@ -68,14 +82,29 @@ button.navbar-toggler {
   position: absolute;
   top: 15px;
   left: 15px;
+  border: none;
+
+  .fas {
+    font-size: 1.5em!important;
+  }
 }
 
 .bg-dark {
-  background-color: $gray !important;
+  background-color: transparent!important;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
 }
 
 #vasco {
   color: white;
+}
+
+#vasco, #dev {
+  font-size: 2.5em;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
 }
 
 #title {
@@ -268,4 +297,33 @@ button.navbar-toggler {
 
 #form-hint {
   color: $accent_colour2;
+}
+
+.smaller-title {
+  font-size: .2em;
+  padding-top: 8px;
+}
+
+.smaller-nav-item {
+  font-size: 1em;
+}
+
+#back-to-top {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(0,0,0,.3); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 25px; /* Increase font size */
+}
+
+#back-to-top:hover {
+  background-color: $accent_colour2;
 }
