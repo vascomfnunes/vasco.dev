@@ -64,7 +64,8 @@
         </ul>
       </div>
       <div class="mx-auto order-0">
-        <a class="navbar-brand mx-auto js-scroll-trigger" href="#home"><span id="vasco">Vasco</span><span class="accent">.dev</span></a>
+        <a class="navbar-brand mx-auto js-scroll-trigger" href="#home"><span
+            id="vasco">Vasco</span><span class="accent2">.dev</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
           <i class="fas fa-caret-square-down"></i>
         </button>
@@ -89,7 +90,7 @@
           <img src="/img/photo.jpg" id="photo" class="animated fadeIn" alt="My photo"/>
         </div>
         <div class="col-12 text-center" id="title">
-          <h2 class="animated fadeInUp"><span class="accent">full stack</span> web developer</h2>
+          <h2 class="animated fadeInUp"><span class="accent2">full stack</span> web developer</h2>
         </div>
       </div>
 
@@ -101,7 +102,7 @@
         <div class="row">
           <div class="col text-center">
             <h2>Hi, I'm Vasco. Nice to meet you.</h2>
-            <p>I'm a full stack web developer with several year of experience always trying to deliver
+            <p>I'm a full stack web developer with several years of experience always trying to deliver
             the best technical solutions for each project I'm involved with. I have experience at
             creating logical and innovative solutions to complex problems with several web
             technologies. I’m continually evaluating and upgrading my skills so that I stay at the
@@ -157,8 +158,8 @@
               </div>
               <div class="grid-item-hover">
                 <div class="text-wrap">
-                  <p>Institutional website and E-commerce store for a worldwide pet food company. Their goal is to develop and produce a
-                  global benchmark for pet diets.</p>
+                  <p>Institutional website and E-commerce store for a worldwide pet food company
+                  which goal is to develop and produce a global benchmark for pet diets.</p>
                   <p><a href="https://natureapetfoods.com"
                         target="_blank"><i class="fas fa-link"></i> https://natureapetfoods.com</a></p>
                 </div>
@@ -192,9 +193,7 @@
               </div>
               <div class="grid-item-hover">
                 <div class="text-wrap">
-                  <p>A Derbyshire, UK artist website. Karen Woods is a contemporary textile/mixed media artist based in the UK. She
-                  has established a unique area of practice for Arts into Health working with a huge
-                  variety of groups from galleries.</p>
+                  <p>A Derbyshire, UK artist website. Karen Woods is a contemporary textile/mixed media artist based in the UK.</p>
                   <p><a href="http://www.karenwoods.co.uk"
                         target="_blank"><i class="fas fa-link"></i> http://www.karenwoods.co.uk</a></p>
                 </div>
@@ -214,8 +213,21 @@
             <h2>Contact</h2>
             <h3>How can I help?</h3>
             <p></p>I’m always open to discussing new projects or partnership opportunities.</p>
-            <p><a href="mailto:contact@vasco.dev" target="_blank"><p><i class="fas
-            fa-envelope"></i></p><p>contact@vasco.dev</p></a></p>
+
+              <form id="contact-form" action="https://formspree.io/contact@vasco.dev" method="POST" />
+                <fieldset class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your e-mail address">
+                  <small class="form-hint">I'll never share your email with anyone else.</small>
+                </fieldset>
+                <fieldset class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="3" placeholder="Write your message"></textarea>
+                </fieldset>
+                <button type="submit" class="btn btn-secondary" id="form-btn">Submit</button>
+                <p id="form-error"></p>
+              </form>
+
           </div>
         </div>
       </div>

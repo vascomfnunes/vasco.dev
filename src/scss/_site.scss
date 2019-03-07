@@ -147,6 +147,10 @@ button.navbar-toggler {
   color: $accent_colour;
 }
 
+.accent2 {
+  color: $accent_colour2;
+}
+
 .fas {
   color: $accent_colour; 
 }
@@ -165,7 +169,6 @@ button.navbar-toggler {
 
 .grid-item {
   position: relative;
-  border-radius: 15px;
   overflow: hidden;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -193,6 +196,7 @@ button.navbar-toggler {
     p {
       font-size: 15px;
       text-align: center;
+      padding: 15px;
     }
 
     h4 {
@@ -204,9 +208,6 @@ button.navbar-toggler {
   .box-img {
     width: 100%;
     float: left;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
     overflow: hidden;
     border: 1px solid #ccc;
   }
@@ -229,8 +230,6 @@ button.navbar-toggler {
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
 }
 
 .grid-item:hover .grid-item-hover {
@@ -243,4 +242,20 @@ button.navbar-toggler {
 
 .grid-item:hover .grid-image .text-wrap {
   bottom: -100%;
+}
+
+.btn-secondary {
+  background-color: $accent_colour2;
+  border: none;
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: $accent_colour;
+  color: $foreground_color;
+}
+
+#form-error {
+  font-size: 1.2em!important;
+  margin-top: 15px;
 }
