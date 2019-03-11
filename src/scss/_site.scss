@@ -61,7 +61,7 @@ p {
 }
 
 .dark-background {
-  background-color: $gray!important;
+  background-color: $gray !important;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -85,12 +85,12 @@ button.navbar-toggler {
   border: none;
 
   .fas {
-    font-size: 1.5em!important;
+    font-size: 1.5em !important;
   }
 }
 
 .bg-dark {
-  background-color: transparent!important;
+  background-color: transparent !important;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -100,7 +100,8 @@ button.navbar-toggler {
   color: white;
 }
 
-#vasco, #dev {
+#vasco,
+#dev {
   font-size: 2.5em;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -300,7 +301,7 @@ button.navbar-toggler {
 }
 
 .smaller-title {
-  font-size: .2em;
+  font-size: 0.2em;
   padding-top: 8px;
 }
 
@@ -316,7 +317,7 @@ button.navbar-toggler {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: rgba(0,0,0,.3); /* Set a background color */
+  background-color: rgba(0, 0, 0, 0.3); /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
