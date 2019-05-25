@@ -25,6 +25,13 @@ $ gulp
 $ gulp watch
 ```
 
+## Push subtree to production server
+
+```
+git subtree split --prefix dist master
+git push dokku {0fbc49258e96ac4c187ec374e6267e529107f997 (from the above line)}:master --force
+```
+
 ## Included libraries
 
 - [Babel](https://babeljs.io)
