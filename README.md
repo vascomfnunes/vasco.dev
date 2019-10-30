@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/28d7eaab-f2b1-4316-9bef-bbaaeeb5f080/deploy-status)](https://app.netlify.com/sites/vascodev/deploys)
 
+Based on my own [HTML5 Single page boilerplate](https://github.com/vascomfnunes/vn-single-page-boilerplate)
+
 ## Directory structure
 
 - **src**: contains all source code (html, scss and js)
@@ -25,13 +27,6 @@ $ gulp
 
 ```
 $ gulp watch
-```
-
-## Push subtree to production server
-
-```
-git subtree split --prefix dist master
-git push dokku {0fbc49258e96ac4c187ec374e6267e529107f997 (from the above line)}:master --force
 ```
 
 ## Included libraries
