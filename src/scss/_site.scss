@@ -1,11 +1,11 @@
 html,
 body {
   background-color: $background-color;
-  padding: 0;
+  color: $foreground-color;
   font-family: 'Encode Sans', sans-serif;
-  color: $foreground_color;
   max-width: 100%;
   overflow-x: hidden;
+  padding: 0;
 }
 
 h1,
@@ -14,8 +14,8 @@ a {
 }
 
 a:hover {
-  text-decoration: none;
   color: $foreground-color;
+  text-decoration: none;
 }
 
 h2 {
@@ -42,10 +42,10 @@ p {
 }
 
 #photo {
-  width: 250px;
-  height: 250px;
   border-radius: 50%;
-  border: 8px solid $accent_colour;
+  border: 8px solid $accent-colour;
+  height: 250px;
+  width: 250px;
 }
 
 .navbar {
@@ -54,35 +54,29 @@ p {
   }
 }
 
-.shadow-bottom {
-  -webkit-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-}
-
 .dark-background {
-  background-color: $gray !important;
+  background-color: $gray;
   transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
 }
 
 .nav-item {
-  text-transform: lowercase;
   font-size: 1.3em;
+  text-transform: lowercase;
 }
 
 .navbar-brand {
   font-size: 3em;
-  text-transform: lowercase;
   margin-top: -15px;
+  text-transform: lowercase;
 }
 
 button.navbar-toggler {
+  border: 0;
+  left: 15px;
   position: absolute;
   top: 15px;
-  left: 15px;
-  border: none;
 
   .fas {
     font-size: 1.5em !important;
@@ -97,7 +91,7 @@ button.navbar-toggler {
 }
 
 #vasco {
-  color: white;
+  color: $foreground-color;
 }
 
 #vasco,
@@ -112,34 +106,13 @@ button.navbar-toggler {
   margin-top: 50px;
 }
 
-#work,
 #intro {
   padding: 25px;
 }
 
-#what {
-  padding-bottom: 30px;
-
-  p {
-    color: $accent_colour2;
-  }
-}
-
-#work {
-  background-color: $accent_colour;
-
-  a {
-    color: $foreground_color;
-  }
-
-  a:hover {
-    color: $accent_colour;
-  }
-}
-
 #contact {
-  margin-top: 30px;
   margin-bottom: 30px;
+  margin-top: 30px;
 
   p {
     font-size: 1.3em;
@@ -147,27 +120,27 @@ button.navbar-toggler {
   }
 
   a {
-    color: $accent_colour2;
+    color: $accent-colour2;
   }
 
   a:hover {
-    color: $foreground_color;
+    color: $foreground-color;
   }
 
   .fas {
-    color: $foreground_color !important;
+    color: $foreground-color !important;
   }
 }
 
 #intro {
+  background-color: $accent-colour;
+  color: $foreground-color;
   margin-bottom: 30px;
-  background-color: $accent_colour;
-  color: $foreground_color;
 
   h2 {
     font-size: 2.5em;
-    padding-top: 10px;
     padding-bottom: 15px;
+    padding-top: 10px;
   }
 
   p {
@@ -176,15 +149,15 @@ button.navbar-toggler {
 }
 
 .accent {
-  color: $accent_colour;
+  color: $accent-colour;
 }
 
 .accent2 {
-  color: $accent_colour2;
+  color: $accent-colour2;
 }
 
 .fas {
-  color: $accent_colour;
+  color: $accent-colour;
 }
 
 .logos {
@@ -198,91 +171,15 @@ button.navbar-toggler {
   text-align: center;
 }
 
-.grid-item {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  margin: 15px 0;
-
-  .grid-image {
-  }
-
-  .grid-image img {
-    width: 100%;
-  }
-
-  .text-wrap {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-
-    p {
-      font-size: 15px;
-      text-align: center;
-      padding: 15px;
-    }
-
-    h4 {
-      margin: 0;
-      padding: 15px;
-    }
-  }
-
-  .box-img {
-    width: 100%;
-    float: left;
-    overflow: hidden;
-    border: 1px solid #ccc;
-  }
-}
-
-.grid-item:hover {
-  -webkit-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  -moz-box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-  box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.57);
-}
-
-.grid-item-hover {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  background: rgba(0, 0, 0, 0.7);
-  top: 0;
-  transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-}
-
-.grid-item:hover .grid-item-hover {
-  left: 0;
-}
-
-.grid-item:hover .text-wrap {
-  background: none;
-}
-
-.grid-item:hover .grid-image .text-wrap {
-  bottom: -100%;
-}
-
 .btn-secondary {
-  background-color: $accent_colour2;
+  background-color: $accent-colour2;
   border: none;
-  color: black;
+  color: $gray;
 }
 
 .btn-secondary:hover {
-  background-color: $accent_colour;
-  color: $foreground_color;
+  background-color: $accent-colour;
+  color: $foreground-color;
 }
 
 #form-error {
@@ -291,17 +188,17 @@ button.navbar-toggler {
 }
 
 .form-control {
-  background-color: $accent_colour;
+  background-color: $accent-colour;
+  border: 0;
   color: $foreground-color;
-  border: none;
 }
 
 #form-hint {
-  color: $accent_colour2;
+  color: $accent-colour2;
 }
 
 .smaller-title {
-  font-size: 0.2em;
+  font-size: .2em;
   padding-top: 8px;
 }
 
@@ -310,21 +207,21 @@ button.navbar-toggler {
 }
 
 #back-to-top {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: rgba(0, 0, 0, 0.3); /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 25px; /* Increase font size */
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 10px;
+  bottom: 20px;
+  color: $foreground-color;
+  cursor: pointer;
+  display: none;
+  font-size: 25px;
+  outline: none;
+  padding: 15px;
+  position: fixed;
+  right: 30px;
+  z-index: 99;
 }
 
 #back-to-top:hover {
-  background-color: $accent_colour2;
+  background-color: $accent-colour2;
 }
