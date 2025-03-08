@@ -1,9 +1,15 @@
-$('button#form-btn').click(function (e) {
+document.querySelector('button#form-btn')?.addEventListener('click', function(e) {
   e.preventDefault()
-  if ($('#email').val().length < 3 || $('#message').val().length < 10) {
-    $('#form-error').text('Please fill both fields.')
+  
+  const emailInput = document.querySelector('#email')
+  const messageInput = document.querySelector('#message')
+  const errorElement = document.querySelector('#form-error')
+  const contactForm = document.querySelector('#contact-form')
+
+  if (emailInput.value.length < 3 || messageInput.value.length < 10) {
+    errorElement.textContent = 'Please fill both fields.'
     return
   }
 
-  $('#contact-form').submit()
+  contactForm.submit()
 })
