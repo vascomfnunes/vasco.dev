@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  body {
+    @apply bg-white text-gray-900 min-h-screen;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4;
+  }
+  
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600;
+  }
+  
+  .text-accent2 {
+    @apply text-blue-500;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+}
+
+/* Define animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* AOS animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: ease-out;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(20px);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  background-color: rgb(17, 24, 39);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+#mobile-menu.open {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Navbar transition */
+#main-nav {
+  transition: all 0.3s ease;
+  height: 140px;
+  z-index: 10;
+  background-color: rgb(17, 24, 39);
+}
+
+#main-nav .container {
+  height: 100%;
+}
+
+#main-nav .flex {
+  height: 100%;
+  align-items: center;
+}
+
+#main-nav .logo {
+  transition: all 0.3s ease;
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+#main-nav.scrolled {
+  height: 50px;
+  background-color: rgba(17, 24, 39, 0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#main-nav.scrolled .logo {
+  font-size: 2.25rem;
+}
+
+#main-nav.transparent {
+  background-color: rgba(17, 24, 39, 0.8);
+}
+
+/* Ensure menu items are centered */
+#main-nav a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Header photo fade out on scroll */
+#profile-photo {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 20;
+  will-change: transform, opacity, filter, width, height, z-index;
+}
+
+#profile-photo.behind {
+  z-index: 5; /* Below the navbar when scrolling */
+}
+
+#profile-photo.fade-out {
+  opacity: 0;
+  transform: translateY(-30px);
+  filter: blur(5px);
+}
+
+/* Header fade out on scroll */
+#home {
+  transition: opacity 0.3s ease-out;
+}
+
+#home.fade-out {
+  opacity: 0;
+  pointer-events: none;
+} 
