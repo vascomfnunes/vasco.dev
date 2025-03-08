@@ -133,24 +133,45 @@
                     partnership opportunities.
                 </p>
 
-                <form id="contact-form" action="https://formspree.io/f/xpwpaybb" method="POST"
-                    class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
                     <div>
                         <label for="email" class="block text-left mb-2">Email address</label>
-                        <input type="email" class="w-full px-4 py-2 border rounded" id="email" name="email" />
-                        <small id="form-hint" class="text-gray-500 block mt-1">I'll never share your email with anyone
-                            else.</small>
+                        <input 
+                            type="email" 
+                            class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="your@email.com"
+                        />
+                        <p id="email-error" class="text-red-500 text-sm mt-1 hidden"></p>
+                        <small id="form-hint" class="text-gray-500 block mt-1">I'll never share your email with anyone else.</small>
                     </div>
+                    
                     <div>
                         <label for="message" class="block text-left mb-2">Message</label>
-                        <textarea class="w-full px-4 py-2 border rounded" id="message" name="message"
-                            rows="3"></textarea>
+                        <textarea 
+                            class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                            id="message" 
+                            name="message" 
+                            rows="3" 
+                            required 
+                            placeholder="Your message (minimum 20 characters)"
+                        ></textarea>
+                        <p id="message-error" class="text-red-500 text-sm mt-1 hidden"></p>
                     </div>
-                    <button type="submit" class="bg-gray-800 text-white px-6 py-2 rounded hover:bg-gray-700"
-                        id="form-btn">
-                        Submit
-                    </button>
-                    <p id="form-error"></p>
+
+                    <div class="relative">
+                        <button 
+                            type="submit" 
+                            class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed" 
+                            id="form-btn"
+                        >
+                            Send Message
+                        </button>
+                        <p id="form-error" class="text-red-500 mt-2 hidden"></p>
+                        <p id="form-success" class="text-green-500 mt-2 hidden"></p>
+                    </div>
                 </form>
             </div>
         </div>
