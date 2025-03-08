@@ -4,8 +4,9 @@ import 'animate.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import 'aos/dist/aos.css'
 
-// Import AOS
+// Import AOS and email.js
 import AOS from 'aos'
+import './js/email.js'
 
 // Initialize AOS with configuration
 document.addEventListener('DOMContentLoaded', () => {
