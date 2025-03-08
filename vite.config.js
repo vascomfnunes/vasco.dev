@@ -11,7 +11,8 @@ export default defineConfig({
     minify: 'esbuild',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html')
+        main: resolve(__dirname, 'src/index.html'),
+        404: resolve(__dirname, 'src/404.html')
       }
     }
   },
