@@ -10,10 +10,8 @@ export default {
         padding: '1rem',
       },
       colors: {
-        // Add your custom colors here
       },
       fontFamily: {
-        // Add your custom fonts here
       },
     },
   },
