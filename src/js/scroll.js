@@ -1,64 +1,80 @@
-(function ($) {
+(function () {
   'use strict' // Start of use strict
 
-  function animate (target) {
-    $('html, body').animate(
-      {
-        scrollTop: target.offset().top - 56
-      },
-      400
-    )
+  function animate(target) {
+    window.scrollTo({
+      top: target.offsetTop - 56,
+      behavior: 'smooth'
+    })
   }
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-    if (
-      location.pathname.replace(/^\//, '') ===
-        this.pathname.replace(/^\//, '') &&
-      location.hostname === this.hostname
-    ) {
-      let target = $(this.hash)
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
-      if (target.length) {
-        animate(target)
-        return false
+  // Smooth scrolling using native scrollTo
+  document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])').forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (
+        location.pathname.replace(/^\//, '') ===
+          this.pathname.replace(/^\//, '') &&
+        location.hostname === this.hostname
+      ) {
+        e.preventDefault()
+        const target = document.querySelector(this.hash) || 
+                      document.querySelector(`[name=${this.hash.slice(1)}]`)
+        
+        if (target) {
+          animate(target)
+        }
       }
-    }
+    })
   })
 
-  // Decrease header on scroll and sctoll to top
-  $(window).scroll(function () {
-    let height = $(window).scrollTop()
+  // Decrease header on scroll and scroll to top
+  window.addEventListener('scroll', function() {
+    const height = window.scrollY
+    const backToTop = document.getElementById('back-to-top')
+    const headerTitle = document.getElementById('header-title')
+    const navItems = document.querySelectorAll('.nav-item')
+    const mainNav = document.getElementById('main-nav')
+
     if (height > 50) {
-      $('#back-to-top').css('display', 'block')
-      $('#header-title').addClass('smaller-title')
-      $('.nav-item').addClass('smaller-nav-item')
-      $('#main-nav').removeClass('bg-dark')
-      $('#main-nav').addClass('dark-background')
-      $('#main-nav').addClass('shadow')
+      backToTop.style.display = 'block'
+      headerTitle.classList.add('smaller-title')
+      navItems.forEach(item => item.classList.add('smaller-nav-item'))
+      mainNav.classList.remove('bg-dark')
+      mainNav.classList.add('dark-background', 'shadow')
     } else {
-      $('#back-to-top').css('display', 'none')
-      $('#header-title').removeClass('smaller-title')
-      $('.nav-item').removeClass('smaller-nav-item')
-      $('#main-nav').addClass('bg-dark')
-      $('#main-nav').removeClass('dark-background')
-      $('#main-nav').removeClass('shadow')
+      backToTop.style.display = 'none'
+      headerTitle.classList.remove('smaller-title')
+      navItems.forEach(item => item.classList.remove('smaller-nav-item'))
+      mainNav.classList.add('bg-dark')
+      mainNav.classList.remove('dark-background', 'shadow')
     }
   })
 
-  $('#back-to-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 'slow')
-    return false
+  // Back to top button
+  document.getElementById('back-to-top').addEventListener('click', function(e) {
+    e.preventDefault()
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
   })
 
   // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function () {
-    $('.navbar-collapse').collapse('hide')
+  document.querySelectorAll('.js-scroll-trigger').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbarCollapse = document.querySelector('.navbar-collapse')
+      if (navbarCollapse) {
+        navbarCollapse.classList.remove('show')
+      }
+    })
   })
 
   // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#main-nav',
-    offset: 56
-  })
-})(jQuery) // End of use strict
+  const mainNav = document.getElementById('main-nav')
+  if (mainNav) {
+    const spy = new bootstrap.ScrollSpy(document.body, {
+      target: '#main-nav',
+      offset: 56
+    })
+  }
+})() // End of use strict
