@@ -10,35 +10,16 @@ import './js/email.js'
 
 // Initialize AOS with configuration
 document.addEventListener('DOMContentLoaded', () => {
-  // Prevent initial scroll if there's a hash
-  if (window.location.hash) {
-    window.scrollTo(0, 0)
-    setTimeout(() => {
-      window.location.hash = ''
-    }, 1)
-  }
-
   // Navbar and photo scroll behavior
   const navbar = document.getElementById('main-nav')
   const photo = document.getElementById('profile-photo')
   const scrollThreshold = 30 // For navbar
   const fadeStartThreshold = 30 // Start even earlier
   const fadeEndThreshold = 400 // End much later for more gradual effect
-  const zIndexThreshold = 30 // Match fadeStartThreshold to switch z-index immediately
-  
-  // Initial photo size (matching your HTML classes)
-  const initialSize = window.innerWidth >= 768 ? 320 : 256 // 80px or 64px based on viewport
-  const finalSize = initialSize * 0.2 // Shrink to 40% of original size
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-  window.addEventListener('scroll', () => {
-    // Z-index change and navbar transparency
-    if (window.scrollY > zIndexThreshold) {
-      photo?.classList.add('behind')
-      navbar?.classList.add('transparent')
-    } else {
-      photo?.classList.remove('behind')
-      navbar?.classList.remove('transparent')
-    }
+  const updateScrollEffects = () => {
+    navbar?.classList.toggle('transparent', window.scrollY > scrollThreshold)
 
     // Navbar shrink
     if (window.scrollY > scrollThreshold) {
@@ -47,30 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
       navbar?.classList.remove('scrolled')
     }
 
-    // Gradual photo fade out with resize
-    if (window.scrollY > fadeStartThreshold) {
-      const fadeProgress = Math.min(
-        (window.scrollY - fadeStartThreshold) / (fadeEndThreshold - fadeStartThreshold),
-        1
-      )
-      if (photo) {
-        const currentSize = initialSize - ((initialSize - finalSize) * fadeProgress)
-        photo.style.opacity = Math.max(1 - (fadeProgress * 0.8), 0.2)
-        photo.style.transform = `translateY(${-40 * fadeProgress}px)`
-        photo.style.filter = `blur(${4 * fadeProgress}px)`
-        photo.style.width = `${currentSize}px`
-        photo.style.height = `${currentSize}px`
-      }
-    } else {
-      if (photo) {
-        photo.style.opacity = 1
-        photo.style.transform = 'translateY(0)'
-        photo.style.filter = 'blur(0)'
-        photo.style.width = `${initialSize}px`
-        photo.style.height = `${initialSize}px`
-      }
+    // Keep the layout fixed while gently fading and lifting the portrait.
+    const fadeProgress = reducedMotion.matches ? 0 : Math.min(
+      Math.max((window.scrollY - fadeStartThreshold) / (fadeEndThreshold - fadeStartThreshold), 0), 1)
+
+    if (photo) {
+      photo.style.opacity = String(1 - fadeProgress * 0.3)
+      photo.style.transform = `translateY(${-16 * fadeProgress}px)`
     }
-  })
+  }
+  let scrollFramePending = false
+
+  window.addEventListener('scroll', () => {
+    if (scrollFramePending) return
+
+    scrollFramePending = true
+
+    window.requestAnimationFrame(() => {
+      scrollFramePending = false
+      updateScrollEffects()
+    })
+  }, { passive: true })
+
+  reducedMotion.addEventListener('change', updateScrollEffects)
+  updateScrollEffects()
 
   AOS.init({
     // Global settings
@@ -86,15 +67,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileMenuButton = document.getElementById('mobile-menu-button')
   const mobileMenu = document.getElementById('mobile-menu')
 
+  const setMenuOpen = (open) => {
+    if (!mobileMenu || !mobileMenuButton) return
+
+    mobileMenu.inert = !open
+    mobileMenu.classList.toggle('open', open)
+    mobileMenuButton.setAttribute('aria-expanded', String(open))
+  }
+
   mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('open')
+    setMenuOpen(mobileMenuButton.getAttribute('aria-expanded') !== 'true')
+  })
+
+  mobileMenu?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMenuOpen(false)
+      mobileMenuButton?.focus()
+    }
   })
 
   // Close mobile menu when clicking a link
   const mobileLinks = mobileMenu?.querySelectorAll('a')
+
   mobileLinks?.forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu?.classList.remove('open')
+      setMenuOpen(false)
     })
   })
 })

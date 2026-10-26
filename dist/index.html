@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Vasco Nunes : Web Developer</title>
+    <title>Vasco Nunes · Senior Web Developer</title>
 
     <meta name="description"
-        content="Webpage of Vasco Nunes, web developer based in Buxton, UK. Focused on Ruby and Ruby On Rails development" />
+      content="Webpage of Vasco Nunes, senior web developer based in Buxton, UK. Focused on Ruby and Ruby On Rails development" />
     <meta name="keywords"
-        content="vasco nunes,web,development,design,webdesign,html,vasco,ruby,backend,frontend,apps,javascript,html,css,sass,ruby on rails,wordpress,woocommerce,sql,nodejs,node,api" />
+      content="vasco nunes,web,development,design,webdesign,html,vasco,ruby,backend,frontend,apps,javascript,html,css,sass,ruby on rails,wordpress,woocommerce,sql,nodejs,node,api" />
     <meta name="author" content="Vasco Nunes" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="twitter:card" content="Vasco Nunes" />
-    <meta name="twitter:site" content="https://vasco.dev" />
+    <meta name="twitter:card" content="summary" />
     <meta property="og:title" content="Vasco Nunes" />
     <meta property="og:url" content="https://vasco.dev" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Web developer" />
-    <meta property="og:image" content="https://vasco.dev/img/photo.jpg" />
+    <meta property="og:image" content="https://vasco.dev/photo.jpg" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
@@ -29,177 +27,170 @@
     <meta name="theme-color" content="#ffffff" />
 
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/main-CbF0WATa.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DJeFvA4O.css">
-</head>
+    <script type="module" crossorigin src="./assets/main-Bki5wNvK.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BSjBGYIz.css">
+  </head>
 
-<body class="bg-white">
+  <body class="bg-white">
     <!-- NAVBAR -->
-    <nav class="fixed top-0 w-full bg-gray-900 text-white opacity-0 animate-fadeIn transition-all duration-300 z-10" id="main-nav">
-        <div class="container mx-auto px-4 relative">
-            <div class="flex justify-between items-center h-full">
-                <ul class="hidden md:flex space-x-4">
-                    <li>
-                        <a class="hover:text-gray-300 block transition-all duration-300" href="#intro">About</a>
-                    </li>
-                </ul>
+    <nav class="fixed top-0 w-full bg-gray-900 text-white opacity-0 animate-fadeIn transition-all duration-300 z-10"
+      id="main-nav">
+      <div class="container mx-auto px-4 relative">
+        <div class="flex justify-between items-center h-full">
+          <ul class="hidden md:flex space-x-4">
+            <li>
+              <a class="hover:text-gray-300 block transition-all duration-300" href="#intro">About</a>
+            </li>
+          </ul>
 
-                <a href="#home" class="transition-all duration-300">
-                    <div class="flex logo font-bold">
-                        <span class="text-white">vasco</span>
-                        <span class="text-blue-500">.dev</span>
-                    </div>
-                </a>
-
-                <button class="md:hidden transition-all duration-300" type="button" aria-label="Toggle menu" id="mobile-menu-button">
-                    <i class="fas fa-caret-square-down"></i>
-                </button>
-
-                <ul class="hidden md:flex space-x-4">
-                    <li>
-                        <a class="hover:text-gray-300 block transition-all duration-300" href="#contact">Contact</a>
-                    </li>
-                </ul>
+          <a href="#home" class="transition-all duration-300">
+            <div class="flex logo font-bold">
+              <span class="text-white">vasco</span>
+              <span class="text-blue-500">.dev</span>
             </div>
+          </a>
 
-            <!-- Mobile Menu -->
-            <div class="md:hidden" id="mobile-menu">
-                <ul class="py-2">
-                    <li>
-                        <a class="block py-2 px-4 hover:text-gray-300 transition-all duration-300" href="#intro">About</a>
-                    </li>
-                    <li>
-                        <a class="block py-2 px-4 hover:text-gray-300 transition-all duration-300" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+          <button class="md:hidden transition-all duration-300" type="button" aria-label="Toggle menu"
+            id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false">
+            <i class="fas fa-caret-square-down"></i>
+          </button>
+
+          <ul class="hidden md:flex space-x-4">
+            <li>
+              <a class="hover:text-gray-300 block transition-all duration-300" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden" id="mobile-menu" inert>
+          <ul class="py-2">
+            <li>
+              <a class="block py-2 px-4 hover:text-gray-300 transition-all duration-300" href="#intro">About</a>
+            </li>
+            <li>
+              <a class="block py-2 px-4 hover:text-gray-300 transition-all duration-300" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <!-- END NAVBAR -->
 
-    <!-- HEADER -->
+    <main>
+      <!-- HEADER -->
 
-    <div id="home" class="pt-32">
+      <div id="home" class="pt-40">
         <div class="container mx-auto px-4">
-            <div class="text-center">
-                <img src="./photo.jpg"
-                     id="profile-photo"
-                     class="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full object-cover transition-opacity duration-100"
-                     alt="My photo" />
-                <h2 class="mt-8 opacity-0 animate-fadeInUp text-2xl md:text-5xl font-bold">
-                    <span class="text-blue-500">web</span> developer
-                </h2>
-            </div>
+          <div class="text-center">
+            <img src="./photo.jpg" id="profile-photo" class="mx-auto w-64 h-64 md:w-80 md:h-80 rounded-full object-cover"
+              alt="Vasco Nunes" />
+            <h1 class="mt-8 opacity-0 animate-fadeInUp text-2xl md:text-5xl font-bold">
+              senior <span class="text-blue-500">web</span> developer
+            </h1>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- END HEADER -->
+      <!-- END HEADER -->
 
-    <!-- INTRO -->
+      <!-- INTRO -->
 
-    <div id="intro" class="py-16">
+      <div id="intro" class="py-16">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl mb-6">Hi, I'm Vasco. Nice to meet you.</h2>
-                <p class="text-gray-700">
-                    I'm a experienced full-stack web developer based in
-                    Buxton, UK, with over 10 years of expertise in
-                    delivering innovative and effective technical
-                    solutions for a wide range of projects. Proficient
-                    in utilizing various web technologies to create
-                    logical solutions to complex problems. Committed to
-                    staying current with the latest industry
-                    developments and continuously upgrading my skills.
-                    Proven ability to work independently and as part of
-                    a team, successfully completing projects for IT
-                    houses, web design agencies, and internal IT
-                    departments.
-                </p>
+          <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl mb-6">Hi, I'm Vasco. Nice to meet you.</h2>
+            <div class="space-y-5 text-center text-gray-700 leading-relaxed">
+              <p>
+                I'm a senior web developer specialising in Ruby on Rails. I build and maintain web applications
+                for financial software, e-commerce and enterprise systems.
+              </p>
+              <p>
+                I work across the full application stack, from backend development and third-party integrations
+                to frontend interfaces and automated testing.
+              </p>
+              <p>
+                I enjoy solving complex technical problems and improving existing applications, working with
+                teams to deliver reliable, maintainable software.
+              </p>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- END INTRO -->
+      <!-- END INTRO -->
 
-    <!-- CONTACT -->
+      <!-- CONTACT -->
 
-    <div id="contact" class="py-16 bg-gray-50">
+      <div id="contact" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto opacity-0 transition-all duration-500"
-                 data-aos="fade-up">
-                <h2 class="text-3xl mb-2">Contact</h2>
-                <h3 class="text-xl mb-4">How can I help?</h3>
-                <p class="mb-8">
-                    I'm always open to discussing new projects or
-                    partnership opportunities.
-                </p>
+          <div class="text-center max-w-2xl mx-auto opacity-0 transition-all duration-500" data-aos="fade-up">
+            <h2 class="text-3xl mb-2">Contact</h2>
+            <h3 class="text-xl mb-4">How can I help?</h3>
+            <p class="mb-8">
+              I'm always open to discussing new projects or
+              partnership opportunities.
+            </p>
 
-                <form id="contact-form" action="https://formspree.io/f/xpwpaybb" method="POST" class="space-y-6">
-                    <div>
-                        <label for="email" class="block text-left mb-2">Email address</label>
-                        <input
-                            type="email"
-                            class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            id="email"
-                            name="email"
-                            required
-                            placeholder="your@email.com"
-                        />
-                        <p id="email-error" class="text-red-500 text-sm mt-1 hidden"></p>
-                        <small id="form-hint" class="text-gray-500 block mt-1">I'll never share your email with anyone else.</small>
-                    </div>
+            <form id="contact-form" action="https://formspree.io/f/xpwpaybb" method="POST" class="space-y-6">
+              <div>
+                <label for="email" class="block text-left mb-2">Email address</label>
+                <input type="email"
+                  class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  id="email" name="email" required placeholder="your@email.com" />
+                <p id="email-error" class="text-red-500 text-sm mt-1 hidden"></p>
+                <small id="form-hint" class="text-gray-500 block mt-1">I'll never share your email with anyone
+                  else.</small>
+              </div>
 
-                    <div>
-                        <label for="message" class="block text-left mb-2">Message</label>
-                        <textarea
-                            class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                            id="message"
-                            name="message"
-                            rows="3"
-                            required
-                            placeholder="Your message (minimum 20 characters)"
-                        ></textarea>
-                        <p id="message-error" class="text-red-500 text-sm mt-1 hidden"></p>
-                    </div>
+              <div>
+                <label for="message" class="block text-left mb-2">Message</label>
+                <textarea
+                  class="w-full px-4 py-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  id="message" name="message" rows="3" required
+                  placeholder="Your message (minimum 20 characters)"></textarea>
+                <p id="message-error" class="text-red-500 text-sm mt-1 hidden"></p>
+              </div>
 
-                    <div class="relative">
-                        <button
-                            type="submit"
-                            class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                            id="form-btn"
-                        >
-                            Send Message
-                        </button>
-                        <p id="form-error" class="text-red-500 mt-2 hidden"></p>
-                        <p id="form-success" class="text-green-500 mt-2 hidden"></p>
-                    </div>
-                </form>
-            </div>
+              <div class="relative">
+                <button type="submit"
+                  class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  id="form-btn">
+                  Send Message
+                </button>
+                <p id="form-error" class="text-red-500 mt-2 hidden"></p>
+                <p id="form-success" class="text-green-500 mt-2 hidden"></p>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- END CONTACT -->
+      <!-- END CONTACT -->
+    </main>
 
     <!--BACK TO TOP-->
 
-    <i class="fas fa-angle-double-up fixed bottom-8 right-8 text-2xl cursor-pointer opacity-0 animate-fadeInUp"
-       id="back-to-top"></i>
+    <button type="button" class="fixed bottom-8 right-8 p-3 text-2xl cursor-pointer opacity-0 animate-fadeInUp"
+      id="back-to-top" aria-label="Back to top">
+      <i class="fas fa-angle-double-up" aria-hidden="true"></i>
+    </button>
 
     <!--END BACK TO TOP-->
 
     <!-- FOOTER -->
 
     <footer class="py-8 text-center">
-        <p>
-            &copy;<span id="year"></span> Vasco Nunes |
-            <a rel="me" href="https://www.linkedin.com/in/vascomfnunes/"
-                class="text-blue-600 hover:text-blue-800">LinkedIn</a></a>
-        </p>
+      <p>
+        &copy;<span id="year"></span> Vasco Nunes |
+        <a rel="me" href="https://www.linkedin.com/in/vascomfnunes/"
+          class="text-blue-600 hover:text-blue-800">LinkedIn</a>
+      </p>
     </footer>
 
     <!-- END FOOTER -->
 
-</body>
+  </body>
 
 </html>
